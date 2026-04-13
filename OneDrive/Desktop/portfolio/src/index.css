@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply border border-white/30 bg-white/55 backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/55;
+  }
+
+  .btn-gradient {
+    @apply rounded-xl bg-gradient-to-r from-indigo-500 to-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-blue-500/40;
+  }
+
+  .btn-outline {
+    @apply rounded-xl border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-800 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-400 hover:text-indigo-600 dark:border-slate-700 dark:text-slate-100 dark:hover:border-indigo-400 dark:hover:text-indigo-300;
+  }
+
+  .card-premium {
+    @apply rounded-2xl border border-slate-200/80 bg-white/90 p-6 shadow-xl shadow-slate-200/60 transition-all duration-300 dark:border-slate-800 dark:bg-slate-900/85 dark:shadow-black/30;
+  }
+}
+
+@layer utilities {
+  .hover-glow:hover {
+    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.5), 0 0 24px rgba(59, 130, 246, 0.28);
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-indigo-500 via-blue-500 to-cyan-400 bg-clip-text text-transparent;
+  }
+}
+
+.floating-orb {
+  animation: floatY 6s ease-in-out infinite;
+}
+
+.floating-orb-delay {
+  animation: floatY 8s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
